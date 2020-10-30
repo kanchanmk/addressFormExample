@@ -1,0 +1,21 @@
+<main>
+    <h1>Address Form</h1>
+    <article>
+        <form #addressForm="ngForm" (ngSubmit)="addAddress(addressForm)">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" [(ngModel)]>
+            <label for="name"></label>
+            <input type="text" id="address1" name="address1" [(ngModel)]>
+            <label for="name"></label>
+            <input type="text" id="address2" name="address2" [(ngModel)]>
+            <label for="name"></label>
+            <input type="text" id="address3" name="address3" [(ngModel)]>
+            <label for="city"></label>
+            <input type="text" id="city" name="city" [(ngModel)]>
+            <label for="zipcode"></label>
+            <input type="text" id="zipcode" name="zipcode" [(ngModel)]>
+            <button>Submit</button>
+        </form>
+    </article>
+
+</main>
