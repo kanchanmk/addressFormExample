@@ -1,21 +1,36 @@
-<main>
+<main class="main">
     <h1>Address Form</h1>
     <article>
-        <form #addressForm="ngForm" (ngSubmit)="addAddress(addressForm)">
-            <label for="name"></label>
-            <input type="text" id="name" name="name" [(ngModel)]>
-            <label for="name"></label>
-            <input type="text" id="address1" name="address1" [(ngModel)]>
-            <label for="name"></label>
-            <input type="text" id="address2" name="address2" [(ngModel)]>
-            <label for="name"></label>
-            <input type="text" id="address3" name="address3" [(ngModel)]>
-            <label for="city"></label>
-            <input type="text" id="city" name="city" [(ngModel)]>
-            <label for="zipcode"></label>
-            <input type="text" id="zipcode" name="zipcode" [(ngModel)]>
-            <button>Submit</button>
+        <form #addressForm="ngForm" (ngSubmit)="addAddress(addressForm)" class="form">
+            <section class="addressRow"><label for="name" class="label">Name</label>
+                <input class="input" type="text" id="name" name="name" ngModel>
+            </section>
+            <section class="addressRow">
+                <label for="addressLine1" class="label">Address Line 1</label>
+                <input class="input" type="text" id="addressLine1" name="addressLine1" ngModel>
+            </section>
+            <section class="addressRow">
+                <label for="addressLine2" class="label">Address Line 1</label>
+                <input class="input" type="text" id="addressLine2" name="addressLine2" ngModel>
+            </section>
+            <section class="addressRow">
+                <label for="addressLine3" class="label">Address Line 1</label>
+                <input class="input" type="text" id="addressLine3" name="addressLine3" ngModel>
+            </section>
+            <section class="addressRow">
+                <label for="city" class="label">City</label>
+                <input class="input" type="text" id="city" name="city" ngModel>
+            </section>
+            <section class="addressRow">
+                <label for="zipcode" class="label">Zipcode</label>
+                <input class="input" type="number" id="zipcode" name="zipcode" ngModel>
+            </section>
+            <section class="addressRow">
+                <button>Submit</button>
+            </section>
+      
         </form>
     </article>
+
 
 </main>

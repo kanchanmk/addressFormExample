@@ -13,9 +13,9 @@ export class AddressService {
 
   // Create 
   addAddress = (addressObj: Address):number =>{
-
+    console.log(`In service addAddress 1: ${addressObj.name}`);
     this.addressList.push (addressObj);
-
+    console.log(`In service addAddress 2: ${this.addressList[0]}`);
     return this.addressList.length;
   }
 
@@ -34,9 +34,8 @@ export class AddressService {
   }
 
   // Delete
-  deleteAddress = (name:string) => {
-    const spliceIndex = this.addressList.findIndex((item) => item.name === name);
-    return this.addressList.splice(spliceIndex, 1);
+  deleteAddress = (index:number) => {
+    return this.addressList.splice(index, 1);
   }
 
   // Get the complete list

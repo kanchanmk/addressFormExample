@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { AddressComponent } from './address/address.component';
 import { FormsModule } from '@angular/forms';
 import { AddressListComponent } from './address-list/address-list.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { AddressListComponent } from './address-list/address-list.component';
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
