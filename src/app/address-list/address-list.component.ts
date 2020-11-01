@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Address } from '../interfaces/address';
 import { AddressService } from '../address.service';
-import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-address-list',
@@ -12,22 +13,25 @@ export class AddressListComponent implements OnInit {
 
   addressList: Address[];
 
-  constructor(private service: AddressService) {
+  constructor(private service: AddressService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    console.log(`In AddressList : ${this.service.getAddressList()}`);
     this.addressList = this.service.getAddressList();
 
   }
 
-  handleSubmit = (e, i):void =>{
-    console.log(e.submitter.name );
+  handleSubmit = (e, i:number, id:number ):void =>{
     if(e.submitter.name === "delete"){
       this.service.deleteAddress(i);
     }else{
 
       // Navigate to address form to edit
+      this.router.navigate(["address"], {
+        queryParams: {
+          id: id
+        },
+      });
     }
 
 

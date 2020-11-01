@@ -1,21 +1,32 @@
 <article>
     <h2>List of Addresses</h2>
+    <a routerLink="/address">Add New Address</a>
     <ul>
         
         <li *ngFor="let address of addressList; index as i" >
-            <form  #addressItemForm="ngForm" (ngSubmit)="handleSubmit($event, i)" class="form">
-            <p>Name: {{address.name}}</p>
-            <fieldset><legend>Address</legend>
-            <p>{{address.addressLine1}}</p>
-            <p>{{address.addressLine2}}</p>
-            <p>{{address.addressLine3}}</p>
-            </fieldset>
-            <p>City: {{address.city}}</p>
-            <p>Zipcode: {{address.zipcode}}</p>
-            <section class="buttons">
-                <button name="delete" >Delete</button>
-                <button name="edit">Edit</button>
-            </section>
+            <form  #addressItemForm="ngForm" (ngSubmit)="handleSubmit($event, i, address.id)" class="form">
+                <p class="name">Name: {{address.name}}</p>
+                <section class="row">
+                    <article class="addressContainer">
+                        <section class="address">
+                            <legend class="legend">Address</legend>
+                            <section class="addressLines">
+                                <p>{{address.addressLine1}}</p>
+                                <p>{{address.addressLine2}}</p>
+                                <p>{{address.addressLine3}}</p>
+                            </section>
+                        
+                            <p>City: {{address.city}}</p>
+                            <p>State: {{address.state}}</p>
+                            <p>Zipcode: {{address.zipcode}}</p>
+                        </section>
+                    </article>
+                
+                    <section class="buttons">
+                        <button name="edit" class="button">Edit</button>
+                        <button name="delete" class="button">X</button>
+                    </section>
+                </section>
             </form>
         </li>
 
